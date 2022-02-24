@@ -35,4 +35,14 @@ class DefaultController extends AbstractController
         ]);
 
     }
+
+    public function product(int $id, EntityManagerInterface $em)
+    {
+        $product = $em->getRepository('App:Product')->find($id);
+
+        return $this->render('default/product.html.twig', [
+            'product' => $product,       
+        ]);
+
+    }
 }
