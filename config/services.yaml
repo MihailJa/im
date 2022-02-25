@@ -36,3 +36,10 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: Product }
         public: true
+
+    admin.nested:
+        class: App\Admin\NestedAdmin
+        arguments: [~, App\Entity\Nested, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Nested }
+        public: true
